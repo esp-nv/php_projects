@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16.06.2024 г., 21:45:07 ч.
+    Author     : User
+*/
+.login-card{
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin: 50px 20px;
+    padding: 70px 30px 44px;
+    border-radius: 20px;
+    background: #00aaff;
+   
+    text-align: center;
+    
+}
+.login-card>h2{
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0 0 12px;
+    
+}
+.login-card>h3{
+    color: #008080;
+    margin: 0 0 48px;
+    font-weight: 400;
+    font-size: 16px;
+}
+.login-form{
+    width: 100%;
+    margin: 0;
+    display: grid;
+    gap:16px;
+}
+.login-form >:is(input, button){
+    width:100%;
+    height:56px;
+    border-radius: 60px;
+   
+    
+   
+}
+.login-form>input{
+    color: #0067ab;
+    background: #00aaff;
+    border-color: #01FF70;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+}
+
+.login-form>input::placeholder{
+    color: red;
+}

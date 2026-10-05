@@ -1,0 +1,23 @@
+
+/*
+ * CSS Snipped for display logo color brand on HOVER for font awesome social media icons
+ *
+*/
+    .fa-home {color: black}
+    .fa-info {color: black}
+    .fa-star {color: black}
+    .fa-heart {color: red}
+    .fa-envelope {color: #ffffff}
+    .fa-file {color: #b0c4de}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:hover i.fa-home  		{ color: #3279b6; }
+a:hover i.fa-info        	{ color: #3279b6; }
+a:hover i.fa-star          	{ color: #3279b6; }
+a:hover i.fa-heart        	{ color: red; }
+a:hover i.fa-envelope         { color: #ffffff; }
+a:hover i.fa-file         { color: #3279b6; }
+

@@ -1,0 +1,1280 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+    <head>
+        <meta charset="UTF-8">
+
+
+        <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+        <meta name="apple-mobile-web-app-title" content="CodePen">
+
+        <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+        <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+
+        <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+        <title>CodePen - Responsive Bootstrap Sidebar</title>
+
+        <link rel="canonical" href="https://codepen.io/nkmswot/pen/WNNWLvP">
+
+
+
+
+        <style>
+            /*!
+             * Advanced Boostrap Sidebar
+             * Copyright 2019  nkm_swot(envato)
+            
+             ** Styles
+                big icon menu     - big-icon-menu
+                icon menu         - icon-menu
+                icon + text menu  - icon-text
+            
+              ** Sidebar Themes  
+                blue    - blue-theme      
+                green   - green-theme
+                orange  - orange-theme
+                red     - red-theme
+                purple  - purple-theme
+                greenblue - bluegreen-theme
+                dark   - dark-theme
+                light - light-theme
+            
+                ** Topbar Themes  
+                blue    - blue-theme      
+                green   - green-theme
+                orange  - orange-theme
+                red     - red-theme
+                purple  - purple-theme
+                greenblue - menu-greenblue-theme
+                dark   - dark-theme
+                light - light-theme
+            */
+
+
+            /*
+            8. documentation
+            9. screenshot
+            10. envato content 
+            11. envato submission
+            
+            */
+            /* main body content */
+
+            body {
+                overflow-x: hidden;
+                padding-top: 50px;
+            }
+
+            #feature-content .panel {
+                border-radius: 10px;
+                background: #202938;
+                color: white;
+                border: none;
+            }
+
+            #feature-content .panel:hover {
+                background-color: #45536b;
+                color: white;
+            }
+
+
+            /* Bootstrap sidebar Toggle */
+
+            #wrapper {
+                padding-left: 0;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+
+            #wrapper.toggled {
+                padding-left: 50px;
+            }
+
+
+            /* Bootstrap sidebar styles */
+
+            #bootstrap-sidebar {
+                z-index: 1000;
+                position: fixed;
+                left: 50px;
+                width: 0;
+                height: 100%;
+                margin-left: -50px;
+                overflow-y: auto;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+
+            #wrapper.toggled #bootstrap-sidebar {
+                width: 20%;
+            }
+
+            #main-page-content {
+                width: 100%;
+                position: absolute;
+                padding: 15px;
+            }
+
+            #wrapper.toggled #main-page-content {
+                position: absolute;
+                margin-right: -50px;
+            }
+
+
+            /* Bootstrap Sidebar Navigation Styles */
+
+            .sidebar-nav {
+                position: absolute;
+                top: 10px;
+                min-width: 200px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .sidebar-nav li {
+                text-indent: 10px;
+                line-height: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+            }
+
+            .sidebar-nav li a {
+                text-decoration: none;
+                color: #FCFFF5;
+            }
+
+            .sidebar-nav li a:hover {
+                text-decoration: none;
+                opacity: 0.5;
+            }
+
+            .sidebar-nav li a:hover,
+            .sidebar-nav li a:active,
+            .sidebar-nav li a:focus {
+                text-decoration: none;
+            }
+
+            .sidebar-nav li.active {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            .sidebar-nav li a.active {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            .sidebar-nav li ul li a:hover {
+                text-decoration: underline;
+                background: transparent;
+            }
+
+            ul.collapse {
+                padding-top: 5px;
+            }
+
+            ul.collapse li,
+            ul.collapsing li,
+            ul.in li {
+                list-style: none;
+                border: none;
+                padding-top: 5px;
+            }
+
+            @media(min-width:768px) {
+                /* you can adjust here for right main content spacing */
+                #wrapper {
+                    padding-left: 4%;
+                    /* for small icon menu  */
+                    padding-left: 6%;
+                    /* for big icon menu */
+                    padding-left: 10%;
+                    /* for text icon menu */
+                    position: relative;
+                }
+                #wrapper.toggled {
+                    padding-left: 0;
+                }
+                #bootstrap-sidebar.big-icon-menu {
+                    width: 100px;
+                }
+                #bootstrap-sidebar.icon-menu {
+                    width: 60px;
+                }
+                #bootstrap-sidebar.text-menu {
+                    width: 150px;
+                    font-size: 110%;
+                    padding: 5px;
+                }
+                #wrapper.toggled #bootstrap-sidebar {
+                    width: 0;
+                }
+                #main-page-content {
+                    padding: 20px;
+                    position: relative;
+                }
+                #wrapper.toggled #main-page-content {
+                    position: relative;
+                    margin-right: 0;
+                }
+            }
+
+
+            /* Menu Icon Sizes */
+
+            .big-icon-menu {
+                font-size: 45px;
+            }
+
+            .big-icon-menu ul.sidebar-nav li a span.menu-text,
+            .icon-menu ul.sidebar-nav li a span.menu-text {
+                display: none;
+            }
+
+            .icon-menu {
+                font-size: 20px;
+            }
+
+
+            /* Themes */
+
+
+            /* Dark Theme */
+
+            .dark-theme {
+                background: #202938;
+            }
+
+
+            /* Blue Theme */
+
+            .blue-theme {
+                background: #3c578b;
+            }
+
+
+            /* Green Theme */
+
+            .green-theme {
+                background: #13801A;
+            }
+
+
+            /* Red Theme */
+
+            .red-theme {
+                background: #BF1A17;
+            }
+
+
+            /* Orange Theme */
+
+            .orange-theme {
+                background: #E66012;
+            }
+
+
+            /* Purple Theme */
+
+            .purple-theme {
+                background: #5C257F;
+            }
+
+
+            /* Bluegreen Theme */
+
+            .bluegreen-theme {
+                background: #1F806B;
+            }
+
+
+            /* Light Theme */
+
+            .light-theme {
+                background: #E5E8D5;
+            }
+
+            .light-theme ul.sidebar-nav li a {
+                color: #202938;
+            }
+
+            .light-theme ul.sidebar-nav li.active a {
+                color: #E5E8D5;
+            }
+
+            .light-theme ul.sidebar-nav li.active {
+                background: #202938;
+            }
+
+
+            /* blue navigation bar */
+
+            .navbar-blue {
+                background-color: #3c578b;
+                border-color: #2f3133;
+            }
+
+            .navbar-blue .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-blue .navbar-brand:hover,
+            .navbar-blue .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-blue .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-blue .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-blue .navbar-nav>li>a:hover,
+            .navbar-blue .navbar-nav>li>a:focus {
+                color: #ecdbff;
+                background-color: #2f3133;
+            }
+
+            .navbar-blue .navbar-nav>.active>a,
+            .navbar-blue .navbar-nav>.active>a:hover,
+            .navbar-blue .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #2f3133;
+            }
+
+            .navbar-blue .navbar-nav>.open>a,
+            .navbar-blue .navbar-nav>.open>a:hover,
+            .navbar-blue .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #2f3133;
+            }
+
+            .navbar-blue .navbar-toggle {
+                border-color: #2f3133;
+            }
+
+            .navbar-blue .navbar-toggle:hover,
+            .navbar-blue .navbar-toggle:focus {
+                background-color: #2f3133;
+            }
+
+            .navbar-blue .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-blue .navbar-collapse,
+            .navbar-blue .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-blue .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-blue .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-blue .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-blue .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-blue .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-blue .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-blue .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-blue .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #2f3133;
+                }
+            }
+
+
+            /* Green navigation bar */
+
+            .navbar-green {
+                background-color: #13801a;
+                border-color: #0eab13;
+            }
+
+            .navbar-green .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-green .navbar-brand:hover,
+            .navbar-green .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-green .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-green .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-green .navbar-nav>li>a:hover,
+            .navbar-green .navbar-nav>li>a:focus {
+                background-color: #0eab13;
+                color: #ecdbff;
+            }
+
+            .navbar-green .navbar-nav>.active>a,
+            .navbar-green .navbar-nav>.active>a:hover,
+            .navbar-green .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #0eab13;
+            }
+
+            .navbar-green .navbar-nav>.open>a,
+            .navbar-green .navbar-nav>.open>a:hover,
+            .navbar-green .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #0eab13;
+            }
+
+            .navbar-green .navbar-toggle {
+                border-color: #0eab13;
+            }
+
+            .navbar-green .navbar-toggle:hover,
+            .navbar-green .navbar-toggle:focus {
+                background-color: #0eab13;
+            }
+
+            .navbar-green .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-green .navbar-collapse,
+            .navbar-green .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-green .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-green .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-green .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-green .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-green .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-green .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-green .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-green .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #0eab13;
+                }
+            }
+
+
+            /* Orange navigation bar */
+
+            .navbar-orange {
+                background-color: #e66012;
+                border-color: #b4480a;
+            }
+
+            .navbar-orange .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-orange .navbar-brand:hover,
+            .navbar-orange .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-orange .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-orange .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-orange .navbar-nav>li>a:hover,
+            .navbar-orange .navbar-nav>li>a:focus {
+                color: #ecdbff;
+                background-color: #b4480a;
+            }
+
+            .navbar-orange .navbar-nav>.active>a,
+            .navbar-orange .navbar-nav>.active>a:hover,
+            .navbar-orange .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #b4480a;
+            }
+
+            .navbar-orange .navbar-nav>.open>a,
+            .navbar-orange .navbar-nav>.open>a:hover,
+            .navbar-orange .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #b4480a;
+            }
+
+            .navbar-orange .navbar-toggle {
+                border-color: #b4480a;
+            }
+
+            .navbar-orange .navbar-toggle:hover,
+            .navbar-orange .navbar-toggle:focus {
+                background-color: #b4480a;
+            }
+
+            .navbar-orange .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-orange .navbar-collapse,
+            .navbar-orange .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-orange .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-orange .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-orange .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-orange .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-orange .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-orange .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-orange .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-orange .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #b4480a;
+                }
+            }
+
+
+            /* Red navigation bar */
+
+            .navbar-red {
+                background-color: #bf1a17;
+                border-color: #db4441;
+            }
+
+            .navbar-red .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-red .navbar-brand:hover,
+            .navbar-red .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-red .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-red .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-red .navbar-nav>li>a:hover,
+            .navbar-red .navbar-nav>li>a:focus {
+                color: #ecdbff;
+                background-color: #db4441;
+            }
+
+            .navbar-red .navbar-nav>.active>a,
+            .navbar-red .navbar-nav>.active>a:hover,
+            .navbar-red .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #db4441;
+            }
+
+            .navbar-red .navbar-nav>.open>a,
+            .navbar-red .navbar-nav>.open>a:hover,
+            .navbar-red .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #db4441;
+            }
+
+            .navbar-red .navbar-toggle {
+                border-color: #db4441;
+            }
+
+            .navbar-red .navbar-toggle:hover,
+            .navbar-red .navbar-toggle:focus {
+                background-color: #db4441;
+            }
+
+            .navbar-red .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-red .navbar-collapse,
+            .navbar-red .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-red .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-red .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-red .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-red .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-red .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-red .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-red .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-red .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #db4441;
+                }
+            }
+
+
+            /* Purple navigation bar */
+
+            .navbar-purple {
+                background-color: #5c257f;
+                border-color: #9254ba;
+            }
+
+            .navbar-purple .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-purple .navbar-brand:hover,
+            .navbar-purple .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-purple .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-purple .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-purple .navbar-nav>li>a:hover,
+            .navbar-purple .navbar-nav>li>a:focus {
+                color: #ecdbff;
+                background-color: #9254ba;
+            }
+
+            .navbar-purple .navbar-nav>.active>a,
+            .navbar-purple .navbar-nav>.active>a:hover,
+            .navbar-purple .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #9254ba;
+            }
+
+            .navbar-purple .navbar-nav>.open>a,
+            .navbar-purple .navbar-nav>.open>a:hover,
+            .navbar-purple .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #9254ba;
+            }
+
+            .navbar-purple .navbar-toggle {
+                border-color: #9254ba;
+            }
+
+            .navbar-purple .navbar-toggle:hover,
+            .navbar-purple .navbar-toggle:focus {
+                background-color: #9254ba;
+            }
+
+            .navbar-purple .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-purple .navbar-collapse,
+            .navbar-purple .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-purple .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-purple .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-purple .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-purple .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-purple .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-purple .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-purple .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-purple .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #9254ba;
+                }
+            }
+
+
+            /* GreenBlue navigation bar */
+            .navbar-greenblue {
+                background-color: #1f806b;
+                border-color: #076d57;
+            }
+
+            .navbar-greenblue .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-greenblue .navbar-brand:hover,
+            .navbar-greenblue .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-greenblue .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-greenblue .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-greenblue .navbar-nav>li>a:hover,
+            .navbar-greenblue .navbar-nav>li>a:focus {
+                color: #ecdbff;
+                background-color: #076d57;
+            }
+
+            .navbar-greenblue .navbar-nav>.active>a,
+            .navbar-greenblue .navbar-nav>.active>a:hover,
+            .navbar-greenblue .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #076d57;
+            }
+
+            .navbar-greenblue .navbar-nav>.open>a,
+            .navbar-greenblue .navbar-nav>.open>a:hover,
+            .navbar-greenblue .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #076d57;
+            }
+
+            .navbar-greenblue .navbar-toggle {
+                border-color: #076d57;
+            }
+
+            .navbar-greenblue .navbar-toggle:hover,
+            .navbar-greenblue .navbar-toggle:focus {
+                background-color: #076d57;
+            }
+
+            .navbar-greenblue .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-greenblue .navbar-collapse,
+            .navbar-greenblue .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-greenblue .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-greenblue .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-greenblue .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-greenblue .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-greenblue .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-greenblue .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-greenblue .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-greenblue .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #076d57;
+                }
+            }
+
+
+            /* Dark navigation bar */
+
+            .navbar-dark {
+                background-color: #202938;
+                border-color: #45536b;
+            }
+
+            .navbar-dark .navbar-brand {
+                color: #ecf0f1;
+            }
+
+            .navbar-dark .navbar-brand:hover,
+            .navbar-dark .navbar-brand:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-dark .navbar-text {
+                color: #ecf0f1;
+            }
+
+            .navbar-dark .navbar-nav>li>a {
+                color: #ecf0f1;
+            }
+
+            .navbar-dark .navbar-nav>li>a:hover,
+            .navbar-dark .navbar-nav>li>a:focus {
+                color: #ecdbff;
+                background-color: #45536b;
+            }
+
+            .navbar-dark .navbar-nav>.active>a,
+            .navbar-dark .navbar-nav>.active>a:hover,
+            .navbar-dark .navbar-nav>.active>a:focus {
+                color: #ecdbff;
+                background-color: #45536b;
+            }
+
+            .navbar-dark .navbar-nav>.open>a,
+            .navbar-dark .navbar-nav>.open>a:hover,
+            .navbar-dark .navbar-nav>.open>a:focus {
+                color: #ecdbff;
+                background-color: #45536b;
+            }
+
+            .navbar-dark .navbar-toggle {
+                border-color: #45536b;
+            }
+
+            .navbar-dark .navbar-toggle:hover,
+            .navbar-dark .navbar-toggle:focus {
+                background-color: #45536b;
+            }
+
+            .navbar-dark .navbar-toggle .icon-bar {
+                background-color: #ecf0f1;
+            }
+
+            .navbar-dark .navbar-collapse,
+            .navbar-dark .navbar-form {
+                border-color: #ecf0f1;
+            }
+
+            .navbar-dark .navbar-link {
+                color: #ecf0f1;
+            }
+
+            .navbar-dark .navbar-link:hover {
+                color: #ecdbff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-dark .navbar-nav .open .dropdown-menu>li>a {
+                    color: #ecf0f1;
+                }
+                .navbar-dark .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-dark .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #ecdbff;
+                }
+                .navbar-dark .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-dark .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-dark .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #ecdbff;
+                    background-color: #45536b;
+                }
+            }
+
+
+            /* Light navigation bar */
+
+            .navbar-light {
+                background-color: #ffffff;
+                border-color: #3c3f43;
+            }
+
+            .navbar-light .navbar-brand {
+                color: #363b3c;
+            }
+
+            .navbar-light .navbar-brand:hover,
+            .navbar-light .navbar-brand:focus {
+                color: #fdfdfd;
+            }
+
+            .navbar-light .navbar-text {
+                color: #363b3c;
+            }
+
+            .navbar-light .navbar-nav>li>a {
+                color: #363b3c;
+            }
+
+            .navbar-light .navbar-nav>li>a:hover,
+            .navbar-light .navbar-nav>li>a:focus {
+                color: #fdfdfd;
+                background-color: #3c3f43;
+            }
+
+            .navbar-light .navbar-nav>.active>a,
+            .navbar-light .navbar-nav>.active>a:hover,
+            .navbar-light .navbar-nav>.active>a:focus {
+                color: #fdfdfd;
+                background-color: #3c3f43;
+            }
+
+            .navbar-light .navbar-nav>.open>a,
+            .navbar-light .navbar-nav>.open>a:hover,
+            .navbar-light .navbar-nav>.open>a:focus {
+                color: #fdfdfd;
+                background-color: #3c3f43;
+            }
+
+            .navbar-light .navbar-toggle {
+                border-color: #3c3f43;
+            }
+
+            .navbar-light .navbar-toggle:hover,
+            .navbar-light .navbar-toggle:focus {
+                background-color: #3c3f43;
+            }
+
+            .navbar-light .navbar-toggle .icon-bar {
+                background-color: #363b3c;
+            }
+
+            .navbar-light .navbar-collapse,
+            .navbar-light .navbar-form {
+                border-color: #363b3c;
+            }
+
+            .navbar-light .navbar-link {
+                color: #363b3c;
+            }
+
+            .navbar-light .navbar-link:hover {
+                color: #fdfdfd;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-light .navbar-nav .open .dropdown-menu>li>a {
+                    color: #363b3c;
+                }
+                .navbar-light .navbar-nav .open .dropdown-menu>li>a:hover,
+                .navbar-light .navbar-nav .open .dropdown-menu>li>a:focus {
+                    color: #fdfdfd;
+                }
+                .navbar-light .navbar-nav .open .dropdown-menu>.active>a,
+                .navbar-light .navbar-nav .open .dropdown-menu>.active>a:hover,
+                .navbar-light .navbar-nav .open .dropdown-menu>.active>a:focus {
+                    color: #fdfdfd;
+                    background-color: #3c3f43;
+                }
+            }
+
+            .icon-big{font-size: 40px;}
+        </style>
+
+        <script>
+            window.console = window.console || function (t) {};
+        </script>
+
+
+
+    </head>
+
+    <body translate="no">
+        <!DOCTYPE html>
+    <html lang="en">
+
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Boostrap Sidebar :: Big Icon Menu</title>
+            <link rel="shortcut icon" href="images/favicon.png">
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+            <!-- bootstrap jquery -->
+            <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/mark.js/8.6.0/jquery.mark.min.js"></script>
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+              <![endif]-->
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+            <!-- bootstrap sidebar stylesheet -->
+            <link href="css/bootstrap-sidebar.min.css" rel="stylesheet">
+        </head>
+
+        <body>
+            <!-- boostrap wrapper -->
+            <div id="wrapper">
+                <!-- Navigation -->
+                <nav class="navbar navbar-red  navbar-fixed-top">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>  <span class="logo">Bootstrap Sidebar Version 1.0</span> 
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</a>
+                                </li>
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> CMS <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Pages</a>
+                                        </li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> Posts</a>
+                                        </li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Media</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Administrator <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Profile</a>
+                                        </li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+                <!-- Boostrap Sidebar  - Collapsible Menu Items -->
+                <!-- Sidebar -->
+                <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
+                    <ul class="sidebar-nav">
+                        <li class="active"> <a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> <span class="menu-text">Home</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> <span class="menu-text">Charts</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <span class="menu-text">Reports</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> <span class="menu-text">Catalogue</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> <span class="menu-text">Inbox</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="menu-text">Favourites</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> <span class="menu-text">Assets</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> <span class="menu-text">Tasks</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> <span class="menu-text">Localization</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> <span class="menu-text">Payments</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="menu-text">Training</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-scissors" aria-hidden="true"></span> <span class="menu-text">Customization</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="menu-text">Users</span></a>
+                        </li>
+                        <li> <a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="menu-text">Settings</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /#sidebar-wrapper -->
+                <!-- Page Content -->
+                <div id="main-page-content">
+                    <div class="container-fluid">
+                        <h1>Bootstrap Sidebar Version 1.0</h1>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Features</div>
+                                    <div class="panel-body" id="feature-content">
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-check icon-big" aria-hidden="true"></span>
+                                                    <h3>Responsive</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-fullscreen icon-big" aria-hidden="true"></span>
+                                                    <h3>Full Screen Display</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-phone icon-big" aria-hidden="true"></span>
+                                                    <h3>Devices Compatible</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-tint icon-big" aria-hidden="true"></span>
+                                                    <h3>Light Weight CSS</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-thumbs-up icon-big" aria-hidden="true"></span>
+                                                    <h3>Free Support</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-knight icon-big" aria-hidden="true"></span>
+                                                    <h3>Vector Icons</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-console icon-big" aria-hidden="true"></span>
+                                                    <h3>Single Piece Code</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-object-align-vertical icon-big" aria-hidden="true"></span>
+                                                    <h3>Submenu</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body text-center">
+                                                    <span class="glyphicon glyphicon-text-background icon-big" aria-hidden="true"></span>
+                                                    <h3>8 Themes</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#wrapper -->
+            <!-- Menu Toggle Script -->
+            <script src="js/sidebar.js?ver=2"></script>
+        </body>
+
+    </html>
+
+    <script id="rendered-js" >
+      $(document).ready(function () {
+
+          if ($(window).width() >= 768) {
+
+              if ($('#bootstrap-sidebar').hasClass('icon-menu')) {
+                  localStorage.setItem("default-padding", "60px");
+                  $('#wrapper').css('padding-left', '60px');
+                  console.log('icon');
+              } else
+
+              if ($('#bootstrap-sidebar').hasClass('text-menu')) {
+                  localStorage.setItem("default-padding", "150px");
+                  $('#wrapper').css('padding-left', '150px');
+                  console.log('text');
+              } else
+              if ($('#bootstrap-sidebar').hasClass('big-icon-menu')) {
+                  localStorage.setItem("default-padding", "100px");
+                  $('#wrapper').css('padding-left', '100px');
+                  console.log('big');
+              } else
+              {
+                  $('#wrapper').css('padding-left', '80px');
+                  localStorage.setItem("default-padding", "80px");
+                  console.log('ntg');
+              }
+
+          }
+
+      });
+
+      $("#menu-toggle").click(function (e) {
+          e.preventDefault();
+          let default_padding = localStorage.getItem('default-padding');
+          var origin_padding = $("#wrapper").css("padding-left");
+          if (origin_padding == '0px') {
+              $('#wrapper').css('padding-left', default_padding);
+          } else
+          {
+              $('#wrapper').css('padding-left', '0px');
+          }
+          $("#wrapper").toggleClass("toggled");
+      });
+//# sourceURL=pen.js
+    </script>
+
+
+</body>
+
+</html>

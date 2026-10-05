@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Twitter Bootstrap Theme Switcher">
+        <meta name="author" content="Joseph Guadagno">
+        <link rel="shortcut icon" href="favicon.ico">
+        <title>Twitter Bootstrap Theme Switcher Test</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif] -->
+	</head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">Intro to Twitter Bootstrap</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/index.html">Welcome</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bootstrap Site <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a></li>
+                                <li><a href="http://getbootstrap.com/getting-started" target="_blank">Getting Started</a></li>
+                                <li><a href="http://getbootstrap.com/css" target="_blank">CSS</a></li>
+                                <li><a href="http://getbootstrap.com/components" target="_blank">Components</a></li>
+                                <li><a href="http://getbootstrap.com/javascript" target="_blank">JavaScript</a></li>
+                                <li><a href="http://getbootstrap.com/customize" target="_blank">Customize</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Bootstrap Sites <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://www.fontawesome.io" target="_blank">Font Awesome (icons)</a></li>
+                                <li><a href="http://bootswatch.com/" target="_blank">Bootswatch (themes)</a></li>
+                                <li><a href="http://builtwithbootstrap.com/" target="_blank">Built with Bootstrap</a></li>
+                                <li><a href="http://www.bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources" target="_blank">Bad a$$ list of twitter bootstrap resources</a></li>
+                                <li><a href="http://averagemarcus.github.io/Bootstrap-AcknowledgeInputs/" target="_blank">Bootstrap Acknowledge</a></li>
+                                <li><a href="http://josephguadagno.net/post/2014/01/24/Twitter-Bootstrap-Resources" target="_blank">More Twitter Bootstrap Resources</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDNs <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://www.bootstrapcdn.com/" target="_blank">Bootstrap CDN</a></li>
+                                <li><a href="http://cdnjs.com/" target="_blank">cdnjs</a></li>
+                                <li><a href="http://www.jsdelivr.com/" target="_blank">jsDelivr</a></li>
+                                <li><a href="http://www.asp.net/ajaxlibrary/cdn.ashx" target="_blank">Microsoft Ajax CDN</a></li>
+                                <li><a href="https://developers.google.com/speed/libraries/devguide" target="_blank">Google CDN</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Themes <b class="caret"></b></a>
+                            <ul class="dropdown-menu" id="ThemeList">
+                            </ul>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li class="active"><a href="/thememenu.html">Theme Switcher Test</a></li>
+            </ol>
+            <div class="page-header">
+                <h1>Theme Switcher Test</h1>
+                <p class="lead">Theme Switcher Test</p>
+            </div>
+            <div class="form-group">
+                <label>Themes</label>
+                <select id="ThemeSelect" class="form-control">
+                    <option>Default</option>
+                </select>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="navbar-inner navbar-content-center">
+                    <div>
+                        <div class="col-xs-1 col-sm-1 "><a href="#" class="btn btn-default">&lt;</a></div>
+                        <div class="col-xs-10 col-sm-4">
+                            <p class="text-center navbar-text">&copy;2013-2014, Joseph Guadagno</p>
+                        </div>
+                        <div class="hidden-xs col-sm-3">
+                            <a class="text-center navbar-text" href="http://www.josephguadagno.net" target="_blank" title="josephguadagno.net">josephguadagno.net</a>
+                        </div>
+                        <div class="hidden-xs col-sm-3">
+                            <a class="text-center navbar-text" href="http://www.twitter.com/jguadagno" target="_blank">@jguadagno</a>
+                        </div>
+                        <div class="col-xs-1 col-sm-1"><a href="/tour/index.html" class="btn btn-default pull-right">&gt;</a></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="jquery-1.11.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+        <!-- Include if you want cookie support (http://plugins.jquery.com/cookie/) -->
+        <!-- <script src="/js/jquery.cookie.js"></script> -->
+		<script src="jquery.bootstrapThemeSwitcher.js"></script>
+        <script>
+            $().ready(function () {
+
+                // Setup the theme selectors
+                $('#ThemeList').bootstrapThemeSwitcher();
+                $('#ThemeSelect').bootstrapThemeSwitcher({localFeed: 'themes.json'});
+
+                // Change the theme
+                //$().bootstrapThemeSwitcher('switchTheme', 'default', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+
+                // Load the previously selected theme from the cookies
+                //$().bootstrapThemeSwitcher('loadThemeFromCookie');
+
+            });
+        </script>
+    </body>
+</html>

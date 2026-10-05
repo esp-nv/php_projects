@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* dark mode */
+:root .dark-mode{
+    --bg-main:#18122B;
+    --bg-primary:#ECF2FF; 
+}
+/* body .dark-mode{
+    background-color: var(--bg-main);
+    color: var(--bg-primary)
+}
+.dark-mode a{
+    color:  var(--bg-primary)
+}*/
+
+
+/* light mode */
+:root{
+    --bg-primary:#18122B;
+    --bg-main:#ECF2FF;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Lexend Deca Light";
+}
+body{
+    background-color: var(--bg-primary);
+    color: var(--bg-main)
+}
+
+a, li{
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--bg-primary);
+    text-decoration: none;
+}
+header{
+    height:10rem;
+    font-size: 2rem;
+    background-color: var(--bg-main);
+    color: var(--bg-primary);
+    display: grid;
+    place-items: center;
+}
+.container{
+    width:80%;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container ul{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    height: 10rem;
+}
+.container ul li{
+    height: 10rem;
+    line-height: 10rem;
+    position: relative;
+    cursor: pointer;
+}
+.container ul li:hover, .container ul li a:hover{
+    color:rgb(174, 240, 240);
+}
+.container .drop-down{
+    position: absolute;
+    background-color: var(--bg-main);
+    height: auto;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    top: 15rem;
+    transition: all .3s linear;
+}
+.container ul li:hover > .drop-down{
+    visibility: visible;
+    opacity: 1;
+    top:10rem;
+}
+.container .drop-down li{
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    text-align: center;
+    transition: all .3s linear;
+
+}
+.container .drop-down li:hover{
+    background-color: rgb(109, 89, 53);
+
+}
+/*hero sectoin style */
+h2 {
+    font-size: clamp(2.8rem, 2rem + 3vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    color: var(--bg-primary);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 1rem + 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--bg-primary);
+}
+
+button {
+    margin: 6rem;
+    padding: 1rem 2rem;
+    background: var(--btn-bg);
+    color: var(--bg-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.6;
+    border: 1px solid var(--bg-primary);
+    border-radius: 0.5rem;
+    transition: background-color 300ms;
+}
+
+button:focus,
+button:hover {
+    background: var(--bg-primary);
+    cursor: pointer;
+    color:rgb(174, 240, 240);
+}
+
+.hero {
+    display: grid;
+    place-items: space-between;
+    height: 70rem;
+  background-color: #ECF2FF;
+
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero1{
+    padding:5% 3%;
+ background-color: var(--bg-main);
+    display: flex;
+    align-items: center;
+   justify-content: center;
+  
+}
+@media (max-width:780px) {
+    .container ul{
+        gap: 2rem;
+        height: 10rem;
+    }
+    
+}
+
+/* toggle button */
+.toggle-btn{
+    height: 10rem;
+    display: flex;
+    align-items: center;
+}
+#checkbox{
+    visibility: hidden;
+}
+.toggle-lable{
+    width: 6rem;
+    height: 4rem;
+    background-color: var(--bg-primary);
+    display: inline-block;
+    position: relative;
+    border-radius: 10rem;
+}
+.toggle-ball{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+    display: inline-block;
+    position: absolute;
+    top:.5rem;
+    left: .5rem;
+
+}
+#checkbox:checked + .toggle-lable .toggle-ball{
+    transition: all .2s linear;
+    transform: translateX(2rem);
+    background-color: var(--bg-main);
+}
+#checkbox:checked + .toggle-lable{
+    transition: all .2s linear;
+    background-color: var(--bg-primary);
+}

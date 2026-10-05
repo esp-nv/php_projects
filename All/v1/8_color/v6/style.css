@@ -1,0 +1,178 @@
+body {
+    background-color: var(--background-tela);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tema-padrao {
+    --background-tela: rgb(20, 187, 118);
+    --calculadora-color: #0084ac;
+    --font-color: #c9f03c;
+    --visor-color: #000000;
+    --visor-interno-color: #9b0e6c;
+    --cor-botao-igual: rgb(33, 241, 50);
+
+}
+
+.tema-1 {
+    --background-tela: rgb(230, 69, 221);
+    --calculadora-color: blue;
+    --font-color: #c70909;
+    --visor-color: #000000;
+    --visor-interno-color: #696969;
+    --cor-botao-igual: rgb(210, 241, 33);
+}
+
+.tema-2 {
+    --background-tela: rgb(233, 134, 54);
+    --calculadora-color: #243133;
+    --font-color: #ffffff;
+    --visor-color: #000000;
+    --visor-interno-color: #575107;
+    --cor-botao-igual: rgb(238, 61, 61);
+}
+
+.tema-2 {
+    --background-tela: rgb(59, 161, 0);
+    --calculadora-color: #bebebe;
+    --font-color: #ffffff;
+    --visor-color: #000000;
+    --visor-interno-color: #575107;
+    --cor-botao-igual: rgb(238, 61, 61);
+}
+
+.tema-3 {
+    --background-tela: rgba(206, 117, 45, 0.37);
+    --calculadora-color: #c20802;
+    --font-color: #ffffff;
+    --visor-color: #000000;
+    --visor-interno-color: #575107;
+    --cor-botao-igual: rgb(238, 61, 61);
+}
+
+.tema-4 {
+    --background-tela: rgba(65, 39, 17, 0.877);
+    --calculadora-color: #614694;
+    --font-color: #ffffff;
+    --visor-color: #000000;
+    --visor-interno-color: #22a3b9;
+    --cor-botao-igual: rgb(238, 61, 61);
+}
+
+.tema-5 {
+    --background-tela: rgb(17, 66, 46);
+    --calculadora-color: #00da1d;
+    --font-color: #ffffff;
+    --visor-color: #00290a;
+    --visor-interno-color: #0004db;
+    --cor-botao-igual: rgb(238, 61, 61);
+}
+
+.calculadora {
+    width: 300px;
+    height: 400px;
+    background-color: var(--calculadora-color);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#igual {
+    background-color: var(--cor-botao-igual);
+}
+
+.botao {
+    color: var(--font-color);
+}
+
+
+.painel {
+    height: 80px;
+    width: 100%;
+    background-color: var(--visor-color);
+    margin-bottom: 20px;
+    font-family: 'LCDMono2 Bold', monospace;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 4px 4px 3px rgb(0 0 0 / 30%);
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#resultado {
+    background-color: red;
+    height: 60px;
+    width: 100%;
+    text-align: right;
+    font-size: 18px;
+}
+
+.botoes {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    flex: 1;
+}
+
+.botoes a {
+
+    background-color: #666;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-igual {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 4;
+
+}
+
+.btn-c {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.btn-0 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#tema {
+    background-color: rgb(28, 32, 39);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#tema>option:hover {
+    box-shadow: 0 0 10px 100px #a86218 inset;
+
+}
+
+
+
+@font-face {
+    font-family: 'LCDMono2 Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('LCDMono2 Bold'), url('../fonts/LCDM2B__.woff') format('woff');
+}

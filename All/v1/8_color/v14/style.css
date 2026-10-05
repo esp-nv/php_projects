@@ -1,0 +1,94 @@
+:root {
+    --font-size: 16px;
+    --font-family: Arial, Helvetica, sans-serif;
+    --default-color: rgb(0, 0, 0);
+    --body-background-color: rgb(255, 255, 255);
+    --header-background-color: rgb(100, 0, 200);
+    --logo-slogan-color: rgb(255, 255, 255);
+    --modal-box-shadow-color: rgb(0, 0, 0);
+    --modal-header-text-color: rgb(255, 255, 255);
+    --modal-header-background-color: rgb(100, 0, 200);
+    --btn-text-color: rgb(255, 255, 255);
+    --btn-background-color: rgb(0, 80, 100);
+}
+
+.dark {
+    --default-color: rgb(200, 200, 200);
+    --body-background-color: rgb(20, 30, 40);
+    --header-background-color: rgb(60, 70, 80);
+    --logo-slogan-color: rgb(200, 200, 200);
+    --modal-box-shadow-color: rgb(150, 150, 150);
+    --modal-header-text-color: rgb(200, 200, 200);
+    --modal-header-background-color: rgb(60, 70, 80);
+    --btn-text-color: rgb(56, 56, 56);
+    --btn-background-color: rgb(209, 209, 209);
+}
+
+html {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+body {
+    margin: 0;
+    background: var(--body-background-color);
+}
+
+#header {
+    display: flex;
+    height: 60px;
+    padding: 0 10px;
+    background: var(--header-background-color);
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+}
+
+#logo {
+    display: flex;
+    height: 60px;
+}
+
+#logo > .logo__slogan {
+    line-height: 60px;
+    color: var(--logo-slogan-color);
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 1.4em;
+    color: var(--btn-text-color);
+    background: var(--btn-background-color);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#modal {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    margin-left: -200px;
+    box-shadow: 0 0 20px 0 var(--modal-box-shadow-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#modal > .modal__header {
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--modal-header-text-color);
+    background: var(--modal-header-background-color);
+}
+
+#modal > .modal__content {
+    padding: 10px;
+    color: var(--default-color);
+    line-height: 1.5em;
+}

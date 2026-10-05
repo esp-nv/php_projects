@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Chnager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="theme-open" class="fas fa-bars"></div>
+
+    <div class="themes-container">
+      <div id="theme-close" class="fas fa-times"></div>
+      <h3>Switch theme</h3>
+      <div class="theme-toggler">
+        <span>light</span>
+        <span class="toggler"></span>
+        <span>dart</span>
+      </div>
+      <h3>pick a color</h3>
+      <div class="theme-colors">
+        <div class="color" style="background: #2980b9"></div>
+        <div class="color" style="background: #27ae60"></div>
+        <div class="color" style="background: #ff1502"></div>
+        <div class="color" style="background: #8e44ad"></div>
+        <div class="color" style="background: #0fb9b1"></div>
+        <div class="color" style="background: #ffd32a"></div>
+        <div class="color" style="background: #ff0033"></div>
+        <div class="color" style="background: #e84393"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="content">
+        <img src="./image/kitten.jpg" alt="" />
+        <h3>some text heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+          assumenda.
+        </p>
+        <a href="#" class="btn">read more</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

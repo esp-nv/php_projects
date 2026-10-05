@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" id="switcher-id" href="">
+</head>
+
+<body>
+    <header>
+        <h1>THEME SWITCHER</h1>
+        <div class="theme-switches">
+            <div data-theme="light" class="switch" id="switch-1"></div>
+            <div data-theme="sky" class="switch" id="switch-2"></div>
+            <div data-theme="purple" class="switch" id="switch-3"></div>
+            <div data-theme="dark" class="switch" id="switch-4"></div>
+
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <!-- <img src="https://images.unsplash.com/photo-1597926588114-2d9c1190b5c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=923&q=80" -->
+            <!-- alt="Placeholder" class="image"> -->
+            <div class="text">
+                <h3>Color Pallete</h3>
+
+            </div>
+        </div>
+        <script src="./script.js"></script>
+
+</body>
+
+</html>

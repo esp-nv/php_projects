@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Algafy </title>
+    <!--CSS Link-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <!--box-icons Link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <main>
+        <section class="setting" id="setting">
+            <button class="setting-icon" onclick="showSetting()">
+                <i class='bx bx-cog bx-spin'></i>
+            </button>
+            <h2 class="theme-title">Theme Pastel Color</h2>
+            <ul class="theme-color">
+                <li class="colors" id="color1" data-color="#645CBB"></li>
+                <li class="colors" id="color2" data-color="#B3005E"></li>
+                <li class="colors" id="color3" data-color="#F2CD5C"></li>
+                <li class="colors" id="color4" data-color="#939B62"></li>
+                <li class="colors" id="color5" data-color="#4c555d"></li>
+                <li class="colors" id="color6" data-color="#439A97"></li>
+                <li class="colors" id="color7" data-color="#815B5B"></li>
+                <li class="colors" id="color8" data-color="#25316D"></li>
+            </ul>
+            <h2 class="theme-title">Theme Light Color</h2>
+            <ul class="theme-color">
+                <li class="colors" id="color9" data-color="#AAE3E2"></li>
+                <li class="colors" id="color10" data-color="#7286D3"></li>
+                <li class="colors" id="color11" data-color="#BAABDA"></li>
+                <li class="colors" id="color12" data-color="#CDE990"></li>
+                <li class="colors" id="color13" data-color="#FD8A8A"></li>
+                <li class="colors" id="color14" data-color="#F0E161"></li>
+                <li class="colors" id="color15" data-color="#C3B091"></li>
+                <li class="colors" id="color16" data-color="#ABD9FF"></li>
+            </ul>
+
+            <h2 class="theme-title">Theme Text Font</h2>
+            <ul class="theme-text">
+                <li class="text" id="text1" data-text="Kanit">Kanit</li>
+                <li class="text" id="text2" data-text="Signika Negative">Signika Negative</li>
+                <li class="text" id="text3" data-text="Caveat">Caveat</li>
+            </ul>
+        </section>
+
+        <section class="about-me">
+            <div class="container">
+                <h1 class="title">
+                    mariana algafy
+                    frontend developer
+                    based in palestine
+                </h1>
+                <div class="description">
+                    <p class="description">Work for money💸💰 and development for love!❤️ I’m <span>mariana
+                            algafy</span>, <br /> a frontend developer based in palestine.</p>
+                    <p>i always strive to create beautiful and functional designs that perfectly align with my clients'
+                        needs and goals</p>
+                </div>
+            </div>
+            <svg class="about-me-top-svg" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                        <stop id="stop1" stop-color="var(--primary-color)" offset="0%"></stop>
+                        <stop id="stop2" stop-color="var(--primary-color)" offset="100%"></stop>
+                    </linearGradient>
+                </defs>
+                <path fill="url(#sw-gradient)"
+                    d="M23.2,-30.1C29.6,-27.3,33.9,-19.8,36.5,-11.9C39.1,-3.9,40,4.7,36.5,10.8C33,16.8,25.2,20.4,18.4,25.8C11.6,31.2,5.8,38.3,-0.9,39.6C-7.7,40.9,-15.4,36.3,-23.2,31.3C-31,26.2,-38.9,20.7,-41.6,13.3C-44.4,5.8,-42,-3.5,-37.9,-11.2C-33.9,-18.8,-28.1,-24.8,-21.5,-27.6C-14.9,-30.3,-7.5,-29.8,0.5,-30.5C8.4,-31.1,16.8,-32.9,23.2,-30.1Z"
+                    width="100%" height="100%" transform="translate(50 50)" stroke-width="0"
+                    style="transition: all 0.3s ease 0s;"></path>
+            </svg>
+            <svg class="about-me-top-bg-svg" id="sw-js-blob-svg" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                        <stop id="stop1" stop-color="var(--primary-color)" offset="0%"></stop>
+                        <stop id="stop2" stop-color="var(--primary-color)" offset="100%"></stop>
+                    </linearGradient>
+                </defs>
+                <path fill="none"
+                    d="M23.2,-30.1C29.6,-27.3,33.9,-19.8,36.5,-11.9C39.1,-3.9,40,4.7,36.5,10.8C33,16.8,25.2,20.4,18.4,25.8C11.6,31.2,5.8,38.3,-0.9,39.6C-7.7,40.9,-15.4,36.3,-23.2,31.3C-31,26.2,-38.9,20.7,-41.6,13.3C-44.4,5.8,-42,-3.5,-37.9,-11.2C-33.9,-18.8,-28.1,-24.8,-21.5,-27.6C-14.9,-30.3,-7.5,-29.8,0.5,-30.5C8.4,-31.1,16.8,-32.9,23.2,-30.1Z"
+                    width="100%" height="100%" transform="translate(50 50)" stroke-width="1"
+                    style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>
+            </svg>
+            <svg class="about-me-bottom-svg" id="sw-js-blob-svg" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                        <stop id="stop1" stop-color="var(--primary-color)" offset="0%"></stop>
+                        <stop id="stop2" stop-color="var(--primary-color)" offset="100%"></stop>
+                    </linearGradient>
+                </defs>
+                <path fill="url(#sw-gradient)"
+                    d="M23.2,-30.1C29.6,-27.3,33.9,-19.8,36.5,-11.9C39.1,-3.9,40,4.7,36.5,10.8C33,16.8,25.2,20.4,18.4,25.8C11.6,31.2,5.8,38.3,-0.9,39.6C-7.7,40.9,-15.4,36.3,-23.2,31.3C-31,26.2,-38.9,20.7,-41.6,13.3C-44.4,5.8,-42,-3.5,-37.9,-11.2C-33.9,-18.8,-28.1,-24.8,-21.5,-27.6C-14.9,-30.3,-7.5,-29.8,0.5,-30.5C8.4,-31.1,16.8,-32.9,23.2,-30.1Z"
+                    width="100%" height="100%" transform="translate(50 50)" stroke-width="0"
+                    style="transition: all 0.3s ease 0s;"></path>
+            </svg>
+        </section>
+
+        <section class="my-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="title">services</h2>
+
+                        <ul class="service-box">
+                            <li class="service-title">Html</li>
+                            <li class="service-title">CSS</li>
+                            <li class="service-title">SCSS</li>
+                            <li class="service-title">Bootstrap</li>
+                            <li class="service-title">Tailwind</li>
+                            <li class="service-title">JavaScript</li>
+                            <li class="service-title">Angular</li>
+                            <li class="service-title">Git</li>
+                            <li class="service-title">Convert XD,Figma To Code</li>
+                            <li class="service-title">Responsive Web Design</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="title">my work</h2>
+
+                        <ul class="service-box">
+                            <li class="service-title">
+                                <div class="title-date">
+                                    <a href="https://wasfat-9a8cf.web.app/" target="_blank">Wasfat</a>
+                                    <span class="date"> 28/10/2022</span>
+                                </div>
+                                <div class="category">
+                                    <span>html</span>
+                                    <span>css</span>
+                                    <span>bootstrap</span>
+                                    <span>Angular</span>
+                                    <span>git</span>
+                                </div>
+                            </li>
+
+                            <li class="service-title">
+                                <div class="title-date">
+                                    <a href="https://law-firm-mariana.netlify.app/" target="_blank">Law Firm</a>
+                                    <span class="date"> 5/12/2022</span>
+                                </div>
+                                <div class="category">
+                                    <span>html</span>
+                                    <span>css</span>
+                                    <span>bootstrap</span>
+                                    <span>JavaScript</span>
+                                    <span>git</span>
+                                </div>
+                            </li>
+
+                            <li class="service-title">
+                                <div class="title-date">
+                                    <a href="https://flower-landing-page-mariana.netlify.app/" target="_blank">Flower
+                                        Shope Landing Page</a>
+                                    <span class="date">10/09/2022</span>
+                                </div>
+                                <div class="category">
+                                    <span>html</span>
+                                    <span>css</span>
+                                    <span>JavaScript</span>
+                                    <span>git</span>
+                                </div>
+                            </li>
+
+                            <li class="service-title">
+                                <div class="title-date">
+                                    <a href="https://mariana-todo.netlify.app/" target="_blank">Todo App</a>
+                                    <span class="date"> 12/02/2023</span>
+                                </div>
+                                <div class="category">
+                                    <span>html</span>
+                                    <span>css</span>
+                                    <span>JavaScript</span>
+                                    <span>git</span>
+                                </div>
+                            </li>
+
+                            <li class="service-title">
+                                <div class="title-date">
+                                    <a href="https://deploy-proj-b5f85.web.app/" target="_blank">Register & Login</a>
+                                    <span class="date"> 15/09/2022</span>
+                                </div>
+                                <div class="category">
+                                    <span>html</span>
+                                    <span>css</span>
+                                    <span>bootstrap</span>
+                                    <span>Angular</span>
+                                    <span>git</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="https://github.com/mriana9" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill:#fff;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/mariana-algafy/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: #fff;">
+                            <path
+                                d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:mariana.algafy@gmail.com" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill:#fff;">
+                            <path
+                                d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <!--js Link-->
+    <script src="script.js"></script>
+</body>
+
+</html>

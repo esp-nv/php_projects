@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dark & Light UI Theme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/836a943e18.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="checkbox" class="checkbox" />
+      <label for="checkbox" class="toggle-theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </label>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias expedita
+        nam recusandae tempora similique voluptatum neque reiciendis excepturi
+        eius tenetur reprehenderit distinctio commodi perferendis, ex voluptates
+        sint porro fugit adipisci.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias expedita
+        nam recusandae tempora similique voluptatum neque reiciendis excepturi
+        eius tenetur reprehenderit distinctio commodi perferendis, ex voluptates
+        sint porro fugit adipisci.
+      </p>
+    </div>
+  </body>
+</html>

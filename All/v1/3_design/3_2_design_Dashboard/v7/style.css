@@ -1,0 +1,245 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5.05.2024 г., 19:07:07 ч.
+    Author     : User
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #192638;
+    color: white;
+    padding: 15px;
+}
+
+.logo{        
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.hamburger{
+    display: none;
+    padding-left: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-self: center;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-list{
+    list-style-type: none;
+}
+
+.navbar-profil{
+    width: 30px;
+    border-radius: 50px;    
+}
+
+.navbar-dropdown{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.navbar-dropdown-profil{
+    display: flex;
+    gap: 6px;
+}
+
+.navbar-dropdown:hover .navbar-profil-dropdown{
+    display: block;    
+}
+
+.navbar-profil-dropdown{    
+    display: none;
+    position: absolute;    
+    min-width: 160px;    
+    z-index: 1;   
+    border: 1px solid #ccc;
+    background-color: #192638;
+    transition: all 20s ease;
+}
+
+.navbar-profil-dropdown ul{
+    list-style-type: none;
+}
+
+.navbar-profil-dropdown ul li{
+    padding: 10px;
+    text-align: center;    
+}
+
+.navbar-profil-dropdown ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-profil-dropdown ul li:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.container{    
+    padding: 10px;
+    padding-left: min(230px,20%);    
+}
+
+.sidenav{
+    position: fixed;    
+    height: 100%;  
+    top: 65px;  
+    left: 0;    
+    width: min(220px,20%);
+    background-color: #2b3e57;
+    transition: all .5s ease;
+}
+
+.sidenav.show{
+    width: 200px;  
+    border: 1px solid #192638;  
+}
+
+.sidenav ul{
+    list-style-type: none;
+}
+
+.sidenav.show ul{
+    display: block;    
+}
+
+.sidenav ul li{
+    padding: 20px;
+    border-bottom: 1px solid #ccc;    
+}
+
+.sidenav ul li:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.sidenav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;    
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 70px;
+}
+
+.nav ul{
+    list-style-type: none;  
+    justify-content: center;  
+    align-items: center;    
+}
+
+.nav ul li a{
+    text-decoration: none;
+}
+
+.section{
+    padding: 30px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0px 0px 5px #ccc;
+    margin-top: 20px;
+}
+
+.section .header{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.row:after{
+    content: '';
+    display: table;
+    clear: both;    
+}
+
+[class*="col-"]{
+    float: left;
+}
+
+.col-1 {width: calc(8.33% * 1);}
+.col-2 {width: calc(8.33% * 2);}
+.col-3 {width: calc(8.33% * 3);}
+.col-4 {width: calc(8.33% * 4);}
+.col-5 {width: calc(8.33% * 5);}
+.col-6 {width: calc(8.33% * 6);}
+.col-7 {width: calc(8.33% * 7);}
+.col-8 {width: calc(8.33% * 8);}
+.col-9 {width: calc(8.33% * 9);}
+.col-10 {width: calc(8.33% * 10);}
+.col-11 {width: calc(8.33% * 11);}
+.col-12 {width: calc(8.33% * 12);}
+
+
+@media screen and (max-width:975px){
+    .logo{
+        display: none;        
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .sidenav{
+        position: absolute;
+        width: 0;
+        height: 93%;
+        z-index: 1;
+    }
+
+    .sidenav ul{       
+        display: none;
+    }
+
+    .content{
+        padding: 0px;
+    }
+
+    .container{
+        padding-left: 10px;
+    }
+
+    [class*="col-"]{
+        width: 100%;
+    }
+}
+

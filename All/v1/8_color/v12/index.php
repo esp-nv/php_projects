@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="theme-default">
+    <div class="container">
+        <h1>JavaScript Color Theme Switcher</h1>
+        <label for="theme-selector">Choose a theme:</label>
+        <select id="theme-selector">
+            <option value="theme-default">Default</option>
+            <option value="theme-dark">Dark</option>
+            <option value="theme-light">Light</option>
+        </select>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

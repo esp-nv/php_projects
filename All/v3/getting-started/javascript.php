@@ -1,0 +1,508 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Bring Bootstrap to life with our optional JavaScript plugins. Learn about each plugin, our data and programmatic API options, and more.">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.84.0">
+
+        <meta name="docsearch:language" content="en">
+        <meta name="docsearch:version" content="5.0">
+
+        <title>JavaScript · Bootstrap v5.0</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.0/getting-started/javascript/">
+
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../assets/css/docs.css" rel="stylesheet">
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="../assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" href="../assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="../assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+        <link rel="manifest" href="../assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="../assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+        <link rel="icon" href="../assets/img/favicons/favicon.ico">
+        <meta name="theme-color" content="#7952b3">
+
+
+        <script defer src="https://cdn.usefathom.com/script.js" data-site="ITUSEYJG"></script>
+        <script>
+            window.ga = window.ga || function () {
+                (ga.q = ga.q || []).push(arguments)
+            };
+            ga.l = +new Date;
+            ga('create', 'UA-146052-10', 'getbootstrap.com');
+            ga('set', 'anonymizeIp', true);
+            ga('send', 'pageview');
+        </script>
+        <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    </head>
+    <body>
+        <div class="skippy visually-hidden-focusable overflow-hidden">
+            <div class="container-xl">
+                <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+                <a class="d-none d-md-inline-flex p-2 m-1" href="#bd-docs-nav">Skip to docs navigation</a>
+            </div>
+        </div>
+
+
+        <div class="d-block px-3 py-2 text-center text-bold skippy">
+            <a href="https://getbootstrap.com/" class="text-white text-decoration-none">There's a newer version of Bootstrap!</a>
+        </div>
+
+        <header class="navbar navbar-expand-md navbar-dark bd-navbar">
+            <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+                  <div class="collapse navbar-collapse" id="bdNavbar">
+                    <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+                        <li class="nav-item col-6 col-md-auto">
+                            <a class="nav-link p-2" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
+                        </li>
+                        <li class="nav-item col-6 col-md-auto">
+                            <a class="nav-link p-2 active" aria-current="true" href="../index.php" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Docs</a>
+                        </li>
+                        <li class="nav-item col-6 col-md-auto">
+                            <a class="nav-link p-2" href="../examples/index.php" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Examples</a>
+                        </li>
+                        <li class="nav-item col-6 col-md-auto">
+                            <a class="nav-link p-2" href="https://icons.getbootstrap.com/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Icons');" target="_blank" rel="noopener">Icons</a>
+                        </li>
+                    </ul>
+
+                    <hr class="d-md-none text-white-50">
+                </div>
+            </nav>
+        </header>
+        <nav class="bd-subnavbar py-2" aria-label="Secondary navigation">
+            <div class="container-xxl d-flex align-items-md-center">
+                <form class="bd-search position-relative me-auto">
+                    <input type="search" class="form-control" id="search-input" placeholder="Search docs..." aria-label="Search docs for..." autocomplete="off" data-bd-docs-version="5.0">
+                </form>
+                <button class="btn bd-sidebar-toggle d-md-none py-0 px-1 ms-3 order-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-expand" fill="currentColor" viewBox="0 0 16 16">
+                    <title>Expand</title>
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zM7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10z"/>
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-collapse" fill="currentColor" viewBox="0 0 16 16">
+                    <title>Collapse</title>
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zm7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0zm-.5 11.707l-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0v-3.793z"/>
+                    </svg>
+
+                </button>
+            </div>
+        </nav>
+
+
+        <div class="container-xxl my-md-4 bd-layout">
+            <aside class="bd-sidebar">
+                <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation"><ul class="list-unstyled mb-0 py-3 pt-md-1">
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#getting-started-collapse" aria-expanded="true" aria-current="true">
+                                Getting started
+                            </button>
+
+                            <div class="collapse show" id="getting-started-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../index.php" class="d-inline-flex align-items-center rounded">Introduction</a></li>
+                                    <li><a href="../getting-started/contents/" class="d-inline-flex align-items-center rounded">Contents</a></li>
+                                    <li><a href="../getting-started/browsers-devices.php" class="d-inline-flex align-items-center rounded">Browsers &amp; devices</a></li>
+                                    <li><a href="../getting-started/javascript.php" class="d-inline-flex align-items-center rounded active" aria-current="page">JavaScript</a></li>
+                                    <li><a href="../getting-started/build-tools.php" class="d-inline-flex align-items-center rounded">Build tools</a></li>
+                                    <li><a href="../getting-started/webpack.php" class="d-inline-flex align-items-center rounded">Webpack</a></li>
+                                    <li><a href="../getting-started/parcel.php" class="d-inline-flex align-items-center rounded">Parcel</a></li>
+                                   <li><a href="../getting-started/rfs.php" class="d-inline-flex align-items-center rounded">RFS</a></li>
+                                    <li><a href="../getting-started/rtl.php" class="d-inline-flex align-items-center rounded">RTL</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                         <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#customize-collapse" aria-expanded="false">
+                                Customize
+                            </button>
+
+                            <div class="collapse" id="customize-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../customize/overview.php" class="d-inline-flex align-items-center rounded">Overview</a></li>
+                                    <li><a href="../customize/sass.php" class="d-inline-flex align-items-center rounded">Sass</a></li>
+                                    <li><a href="../customize/options.php" class="d-inline-flex align-items-center rounded">Options</a></li>
+                                    <li><a href="../customize/color.php" class="d-inline-flex align-items-center rounded">Color</a></li>
+                                    <li><a href="../customize/components.php" class="d-inline-flex align-items-center rounded">Components</a></li>
+                                    <li><a href="../customize/css-variables.php" class="d-inline-flex align-items-center rounded">CSS variables</a></li>
+                                    <li><a href="../customize/optimize.php" class="d-inline-flex align-items-center rounded">Optimize</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#layout-collapse" aria-expanded="false">
+                                Layout
+                            </button>
+                            <div class="collapse" id="layout-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../layout/breakpoints.php" class="d-inline-flex align-items-center rounded">Breakpoints</a></li>
+                                    <li><a href="../layout/containers.php" class="d-inline-flex align-items-center rounded">Containers</a></li>
+                                    <li><a href="../layout/grid.php" class="d-inline-flex align-items-center rounded">Grid</a></li>
+                                    <li><a href="../layout/columns.php" class="d-inline-flex align-items-center rounded">Columns</a></li>
+                                    <li><a href="../layout/gutters.php" class="d-inline-flex align-items-center rounded">Gutters</a></li>
+                                    <li><a href="../layout/utilities.php" class="d-inline-flex align-items-center rounded">Utilities</a></li>
+                                    <li><a href="../layout/z-index.php" class="d-inline-flex align-items-center rounded">Z-index</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#content-collapse" aria-expanded="false">
+                                Content
+                            </button>
+
+                            <div class="collapse" id="content-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../content/reboot.php" class="d-inline-flex align-items-center rounded">Reboot</a></li>
+                                    <li><a href="../content/typography.php" class="d-inline-flex align-items-center rounded">Typography</a></li>
+                                    <li><a href="../content/images.php" class="d-inline-flex align-items-center rounded">Images</a></li>
+                                    <li><a href="../content/tables.php" class="d-inline-flex align-items-center rounded">Tables</a></li>
+                                    <li><a href="../content/figures.php" class="d-inline-flex align-items-center rounded">Figures</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#forms-collapse" aria-expanded="false">
+                                Forms
+                            </button>
+
+                            <div class="collapse" id="forms-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../forms/overview.php" class="d-inline-flex align-items-center rounded">Overview</a></li>
+                                    <li><a href="../forms/form-control.php" class="d-inline-flex align-items-center rounded">Form control</a></li>
+                                    <li><a href="../forms/select.php" class="d-inline-flex align-items-center rounded">Select</a></li>
+                                    <li><a href="../forms/checks-radios.php" class="d-inline-flex align-items-center rounded">Checks &amp; radios</a></li>
+                                    <li><a href="../forms/range.php" class="d-inline-flex align-items-center rounded">Range</a></li>
+                                    <li><a href="../forms/input-group.php" class="d-inline-flex align-items-center rounded">Input group</a></li>
+                                    <li><a href="../forms/floating-labels.php" class="d-inline-flex align-items-center rounded">Floating labels</a></li>
+                                    <li><a href="../forms/layout.php" class="d-inline-flex align-items-center rounded">Layout</a></li>
+                                    <li><a href="../forms/validation.php" class="d-inline-flex align-items-center rounded">Validation</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#components-collapse" aria-expanded="false">
+                                Components
+                            </button>
+
+                            <div class="collapse" id="components-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../components/accordion.php" class="d-inline-flex align-items-center rounded">Accordion</a></li>
+                                    <li><a href="../components/alerts.php" class="d-inline-flex align-items-center rounded">Alerts</a></li>
+                                    <li><a href="../components/badge.php" class="d-inline-flex align-items-center rounded">Badge</a></li>
+                                    <li><a href="../components/breadcrumb.php" class="d-inline-flex align-items-center rounded">Breadcrumb</a></li>
+                                    <li><a href="../components/buttons.php" class="d-inline-flex align-items-center rounded">Buttons</a></li>
+                                    <li><a href="../components/button-group.php" class="d-inline-flex align-items-center rounded">Button group</a></li>
+                                    <li><a href="../components/card.php" class="d-inline-flex align-items-center rounded">Card</a></li>
+                                    <li><a href="../components/carousel.php" class="d-inline-flex align-items-center rounded">Carousel</a></li>
+                                    <li><a href="../components/close-button.php" class="d-inline-flex align-items-center rounded">Close button</a></li>
+                                    <li><a href="../components/collapse.php" class="d-inline-flex align-items-center rounded">Collapse</a></li>
+                                    <li><a href="../components/dropdowns.php" class="d-inline-flex align-items-center rounded">Dropdowns</a></li>
+                                    <li><a href="../components/list-group.php" class="d-inline-flex align-items-center rounded">List group</a></li>
+                                    <li><a href="../components/modal.php" class="d-inline-flex align-items-center rounded">Modal</a></li>
+                                    <li><a href="../components/navs-tabs.php" class="d-inline-flex align-items-center rounded">Navs &amp; tabs</a></li>
+                                    <li><a href="../components/navbar.php" class="d-inline-flex align-items-center rounded">Navbar</a></li>
+                                    <li><a href="../components/offcanvas.php" class="d-inline-flex align-items-center rounded">Offcanvas</a></li>
+                                    <li><a href="../components/pagination.php" class="d-inline-flex align-items-center rounded">Pagination</a></li>
+                                    <li><a href="../components/popovers.php" class="d-inline-flex align-items-center rounded">Popovers</a></li>
+                                    <li><a href="../components/progress.php" class="d-inline-flex align-items-center rounded">Progress</a></li>
+                                    <li><a href="../components/scrollspy.php" class="d-inline-flex align-items-center rounded">Scrollspy</a></li>
+                                    <li><a href="../components/spinners.php" class="d-inline-flex align-items-center rounded">Spinners</a></li>
+                                    <li><a href="../components/toast.php" class="d-inline-flex align-items-center rounded">Toasts</a></li>
+                                    <li><a href="../components/tooltip.php" class="d-inline-flex align-items-center rounded">Tooltips</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#helpers-collapse" aria-expanded="false">
+                                Helpers
+                            </button>
+
+                            <div class="collapse" id="helpers-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../helpers/clearfix.php" class="d-inline-flex align-items-center rounded">Clearfix</a></li>
+                                    <li><a href="../helpers/colored-links.php" class="d-inline-flex align-items-center rounded">Colored links</a></li>
+                                    <li><a href="../helpers/ratio.php" class="d-inline-flex align-items-center rounded">Ratio</a></li>
+                                    <li><a href="../helpers/position.php" class="d-inline-flex align-items-center rounded">Position</a></li>
+                                    <li><a href="../helpers/visually-hidden.php" class="d-inline-flex align-items-center rounded">Visually hidden</a></li>
+                                    <li><a href="../helpers/stretched-link.php" class="d-inline-flex align-items-center rounded">Stretched link</a></li>
+                                    <li><a href="../helpers/text-truncation.php" class="d-inline-flex align-items-center rounded">Text truncation</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#utilities-collapse" aria-expanded="false">
+                                Utilities
+                            </button>
+
+                            <div class="collapse" id="utilities-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../utilities/api.php" class="d-inline-flex align-items-center rounded">API</a></li>
+                                    <li><a href="../utilities/background.php" class="d-inline-flex align-items-center rounded">Background</a></li>
+                                    <li><a href="../utilities/borders.php" class="d-inline-flex align-items-center rounded">Borders</a></li>
+                                    <li><a href="../utilities/colors.php" class="d-inline-flex align-items-center rounded">Colors</a></li>
+                                    <li><a href="../utilities/display.php" class="d-inline-flex align-items-center rounded">Display</a></li>
+                                    <li><a href="../utilities/flex.php" class="d-inline-flex align-items-center rounded">Flex</a></li>
+                                    <li><a href="../utilities/float.php" class="d-inline-flex align-items-center rounded">Float</a></li>
+                                    <li><a href="../utilities/interactions.php" class="d-inline-flex align-items-center rounded">Interactions</a></li>
+                                    <li><a href="../utilities/overflow.php" class="d-inline-flex align-items-center rounded">Overflow</a></li>
+                                    <li><a href="../utilities/position.php" class="d-inline-flex align-items-center rounded">Position</a></li>
+                                    <li><a href="../utilities/shadows.php" class="d-inline-flex align-items-center rounded">Shadows</a></li>
+                                    <li><a href="../utilities/sizing.php" class="d-inline-flex align-items-center rounded">Sizing</a></li>
+                                    <li><a href="../utilities/spacing.php" class="d-inline-flex align-items-center rounded">Spacing</a></li>
+                                    <li><a href="../utilities/text.php" class="d-inline-flex align-items-center rounded">Text</a></li>
+                                    <li><a href="../utilities/vertical-align.php" class="d-inline-flex align-items-center rounded">Vertical align</a></li>
+                                    <li><a href="../utilities/visibility.php" class="d-inline-flex align-items-center rounded">Visibility</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#extend-collapse" aria-expanded="false" >
+                                Extend
+                            </button>
+
+                            <div class="collapse" id="extend-collapse">
+                                <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li><a href="../extend/approach.php" class="d-inline-flex align-items-center rounded" >Approach</a></li>
+                                    <li><a href="../extend/icons.php" class="d-inline-flex align-items-center rounded">Icons</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="my-3 mx-4 border-top"></li>
+                        <li>
+                            <a href="../migration.php" class="d-inline-flex align-items-center rounded">
+                                Migration
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+            </aside>
+
+            <main class="bd-main order-1">
+                <div class="bd-intro ps-lg-4">
+                    <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                        <a class="btn btn-sm btn-bd-light mb-2 mb-md-0" href="https://github.com/twbs/bootstrap/blob/v5.0.2/site/content/docs/5.0/getting-started/javascript.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">View on GitHub</a>
+                        <h1 class="bd-title" id="content">JavaScript</h1>
+                    </div>
+                    <p class="bd-lead">Bring Bootstrap to life with our optional JavaScript plugins. Learn about each plugin, our data and programmatic API options, and more.</p>
+                    <script async src="https://cdn.carbonads.com/carbon.js?serve=CKYIKKJL&placement=getbootstrapcom" id="_carbonads_js"></script>
+
+                </div>
+
+
+                <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
+                    <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
+                    <nav id="TableOfContents">
+                        <ul>
+                            <li><a href="#individual-or-compiled">Individual or compiled</a></li>
+                            <li><a href="#using-bootstrap-as-a-module">Using Bootstrap as a module</a></li>
+                            <li><a href="#dependencies">Dependencies</a></li>
+                            <li><a href="#still-want-to-use-jquery-its-possible">Still want to use jQuery? It&rsquo;s possible!</a></li>
+                            <li><a href="#data-attributes">Data attributes</a></li>
+                            <li><a href="#events">Events</a></li>
+                            <li><a href="#programmatic-api">Programmatic API</a>
+                                <ul>
+                                    <li><a href="#css-selectors-in-constructors">CSS selectors in constructors</a></li>
+                                    <li><a href="#asynchronous-functions-and-transitions">Asynchronous functions and transitions</a></li>
+                                    <li><a href="#default-settings">Default settings</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#no-conflict-only-if-you-use-jquery">No conflict (only if you use jQuery)</a></li>
+                            <li><a href="#version-numbers">Version numbers</a></li>
+                            <li><a href="#no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled</a></li>
+                            <li><a href="#sanitizer">Sanitizer</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="bd-content ps-lg-4">
+
+
+                    <h2 id="individual-or-compiled">Individual or compiled</h2>
+                    <p>Plugins can be included individually (using Bootstrap&rsquo;s individual <code>js/dist/*.js</code>), or all at once using <code>bootstrap.js</code> or the minified <code>bootstrap.min.js</code> (don&rsquo;t include both).</p>
+                    <p>If you use a bundler (Webpack, Rollup&hellip;), you can use <code>/js/dist/*.js</code> files which are UMD ready.</p>
+                    <h2 id="using-bootstrap-as-a-module">Using Bootstrap as a module</h2>
+                    <p>We provide a version of Bootstrap built as <code>ESM</code> (<code>bootstrap.esm.js</code> and <code>bootstrap.esm.min.js</code>) which allows you to use Bootstrap as a module in your browser, if your <a href="https://caniuse.com/es6-module">targeted browsers support it</a>.</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;module&#34;</span><span class="p">&gt;</span>
+  <span class="kr">import</span> <span class="p">{</span> <span class="nx">Toast</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;bootstrap.esm.min.js&#39;</span>
+
+  <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.toast&#39;</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">toastNode</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Toast</span><span class="p">(</span><span class="nx">toastNode</span><span class="p">))</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><div class="bd-callout bd-callout-warning">
+                        <h2 id="incompatible-plugins">Incompatible plugins</h2>
+                        <p>Due to browser limitations, some of our plugins, namely Dropdown, Tooltip and Popover plugins, cannot be used in a <code>&lt;script&gt;</code> tag with <code>module</code> type because they depend on Popper. For more information about the issue see <a href="https://v8.dev/features/modules#specifiers">here</a>.
+                    </div>
+
+                    <h2 id="dependencies">Dependencies</h2>
+                    <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs.</p>
+                    <p>Our dropdowns, popovers and tooltips also depend on <a href="https://popper.js.org/">Popper</a>.</p>
+                    <h2 id="still-want-to-use-jquery-its-possible">Still want to use jQuery? It&rsquo;s possible!</h2>
+                    <p>Bootstrap 5 is designed to be used without jQuery, but it&rsquo;s still possible to use our components with jQuery. <strong>If Bootstrap detects <code>jQuery</code> in the <code>window</code> object</strong> it&rsquo;ll add all of our components in jQuery&rsquo;s plugin system; this means you&rsquo;ll be able to do <code>$('[data-bs-toggle=&quot;tooltip&quot;]').tooltip()</code> to enable tooltips. The same goes for our other components.</p>
+                    <h2 id="data-attributes">Data attributes</h2>
+                    <p>Nearly all Bootstrap plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to <strong>only use one set of data attributes on a single element</strong> (e.g., you cannot trigger a tooltip and modal from the same button.)</p>
+                    <div class="bd-callout bd-callout-warning">
+                        <h2 id="selectors">Selectors</h2>
+                        <p>Currently to query DOM elements we use the native methods <code>querySelector</code> and <code>querySelectorAll</code> for performance reasons, so you have to use <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">valid selectors</a>.
+                            If you use special selectors, for example: <code>collapse:Example</code> be sure to escape them.
+                    </div>
+
+                    <h2 id="events">Events</h2>
+                    <p>Bootstrap provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is triggered on the completion of an action.</p>
+                    <p>All infinitive events provide <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"><code>preventDefault()</code></a> functionality. This provides the ability to stop the execution of an action before it starts. Returning false from an event handler will also automatically call <code>preventDefault()</code>.</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myModal</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myModal&#39;</span><span class="p">)</span>
+
+<span class="nx">myModal</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;show.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="c1">// stops modal from being shown
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><div class="bd-callout bd-callout-warning">
+                        <h2 id="jquery-events">jQuery events</h2>
+                        <p>Bootstrap will detect jQuery if <code>jQuery</code> is present in the <code>window</code> object and there is no <code>data-bs-no-jquery</code> attribute set on <code>&lt;body&gt;</code>. If jQuery is found, Bootstrap will emit events thanks to jQuery&rsquo;s event system. So if you want to listen to Bootstrap&rsquo;s events, you&rsquo;ll have to use the jQuery methods (<code>.on</code>, <code>.one</code>) instead of <code>addEventListener</code>.</p>
+                        <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myTab a&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;shown.bs.tab&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// do something...
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></div>
+                    </div>
+
+                    <h2 id="programmatic-api">Programmatic API</h2>
+                    <p>All constructors accept an optional options object or nothing (which initiates a plugin with its default behavior):</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myModalEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myModal&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Modal</span><span class="p">(</span><span class="nx">myModalEl</span><span class="p">)</span> <span class="c1">// initialized with defaults
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Modal</span><span class="p">(</span><span class="nx">myModalEl</span><span class="p">,</span> <span class="p">{</span> <span class="nx">keyboard</span><span class="o">:</span> <span class="kc">false</span> <span class="p">})</span> <span class="c1">// initialized with no keyboard
+</span></code></pre></div><p>If you&rsquo;d like to get a particular plugin instance, each plugin exposes a <code>getInstance</code> method. In order to retrieve it directly from an element, do this: <code>bootstrap.Popover.getInstance(myPopoverEl)</code>.</p>
+                    <h3 id="css-selectors-in-constructors">CSS selectors in constructors</h3>
+                    <p>You can also use a CSS selector as the first argument instead of a DOM element to initialize the plugin. Currently the element for the plugin is found by the <code>querySelector</code> method since our plugins support a single element only.</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Modal</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">dropdown</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Dropdown</span><span class="p">(</span><span class="s1">&#39;[data-bs-toggle=&#34;dropdown&#34;]&#39;</span><span class="p">)</span>
+</code></pre></div><h3 id="asynchronous-functions-and-transitions">Asynchronous functions and transitions</h3>
+                    <p>All programmatic API methods are <strong>asynchronous</strong> and return to the caller once the transition is started but <strong>before it ends</strong>.</p>
+                    <p>In order to execute an action once the transition is complete, you can listen to the corresponding event.</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myCollapseEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myCollapse&#39;</span><span class="p">)</span>
+
+<span class="nx">myCollapseEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;shown.bs.collapse&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Action to execute once the collapsible area is expanded
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></div><p>In addition a method call on a <strong>transitioning component will be ignored</strong>.</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myCarouselEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myCarousel&#39;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">carousel</span> <span class="o">=</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Carousel</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">(</span><span class="nx">myCarouselEl</span><span class="p">)</span> <span class="c1">// Retrieve a Carousel instance
+</span><span class="c1"></span>
+<span class="nx">myCarouselEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;slid.bs.carousel&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">carousel</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="c1">// Will slide to the slide 2 as soon as the transition to slide 1 is finished
+</span><span class="c1"></span><span class="p">})</span>
+
+<span class="nx">carousel</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="c1">// Will start sliding to the slide 1 and returns to the caller
+</span><span class="c1"></span><span class="nx">carousel</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="c1">// !! Will be ignored, as the transition to the slide 1 is not finished !!
+</span></code></pre></div><h3 id="default-settings">Default settings</h3>
+                    <p>You can change the default settings for a plugin by modifying the plugin&rsquo;s <code>Constructor.Default</code> object:</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// changes default for the modal plugin&#39;s `keyboard` option to false
+</span><span class="c1"></span><span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Modal</span><span class="p">.</span><span class="nx">Default</span><span class="p">.</span><span class="nx">keyboard</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre></div><h2 id="no-conflict-only-if-you-use-jquery">No conflict (only if you use jQuery)</h2>
+                    <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">bootstrapButton</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">button</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">()</span> <span class="c1">// return $.fn.button to previously assigned value
+</span><span class="c1"></span><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">bootstrapBtn</span> <span class="o">=</span> <span class="nx">bootstrapButton</span> <span class="c1">// give $().bootstrapBtn the Bootstrap functionality
+</span></code></pre></div><h2 id="version-numbers">Version numbers</h2>
+                    <p>The version of each of Bootstrap&rsquo;s plugins can be accessed via the <code>VERSION</code> property of the plugin&rsquo;s constructor. For example, for the tooltip plugin:</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Tooltip</span><span class="p">.</span><span class="nx">VERSION</span> <span class="c1">// =&gt; &#34;5.0.2&#34;
+</span></code></pre></div><h2 id="no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled</h2>
+                    <p>Bootstrap&rsquo;s plugins don&rsquo;t fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a> to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.</p>
+                    <div class="bd-callout bd-callout-warning">
+                        <h5 id="third-party-libraries">Third-party libraries</h5>
+                        <p><strong>Bootstrap does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.
+                    </div>
+
+                    <h2 id="sanitizer">Sanitizer</h2>
+                    <p>Tooltips and Popovers use our built-in sanitizer to sanitize options which accept HTML.</p>
+                    <p>The default <code>allowList</code> value is the following:</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ARIA_ATTRIBUTE_PATTERN</span> <span class="o">=</span> <span class="sr">/^aria-[\w-]*$/i</span>
+<span class="kd">var</span> <span class="nx">DefaultAllowlist</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// Global attributes allowed on any supplied element below.
+</span><span class="c1"></span>  <span class="s1">&#39;*&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;lang&#39;</span><span class="p">,</span> <span class="s1">&#39;role&#39;</span><span class="p">,</span> <span class="nx">ARIA_ATTRIBUTE_PATTERN</span><span class="p">],</span>
+  <span class="nx">a</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;rel&#39;</span><span class="p">],</span>
+  <span class="nx">area</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">br</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">col</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">div</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">em</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">hr</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">h1</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">h2</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">h3</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">h4</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">h5</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">h6</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">i</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">img</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;srcset&#39;</span><span class="p">,</span> <span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">],</span>
+  <span class="nx">li</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">ol</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">p</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">pre</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">s</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">small</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">span</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">sub</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">sup</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">strong</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">u</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">ul</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div><p>If you want to add new values to this default <code>allowList</code> you can do the following:</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myDefaultAllowList</span> <span class="o">=</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Tooltip</span><span class="p">.</span><span class="nx">Default</span><span class="p">.</span><span class="nx">allowList</span>
+
+<span class="c1">// To allow table elements
+</span><span class="c1"></span><span class="nx">myDefaultAllowList</span><span class="p">.</span><span class="nx">table</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">// To allow td elements and data-bs-option attributes on td elements
+</span><span class="c1"></span><span class="nx">myDefaultAllowList</span><span class="p">.</span><span class="nx">td</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;data-bs-option&#39;</span><span class="p">]</span>
+
+<span class="c1">// You can push your custom regex to validate your attributes.
+</span><span class="c1">// Be careful about your regular expressions being too lax
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">myCustomRegex</span> <span class="o">=</span> <span class="sr">/^data-my-app-[\w-]+/</span>
+<span class="nx">myDefaultAllowList</span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">myCustomRegex</span><span class="p">)</span>
+</code></pre></div><p>If you want to bypass our sanitizer because you prefer to use a dedicated library, for example <a href="https://www.npmjs.com/package/dompurify">DOMPurify</a>, you should do the following:</p>
+                    <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">yourTooltipEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;yourTooltip&#39;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">tooltip</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Tooltip</span><span class="p">(</span><span class="nx">yourTooltipEl</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">sanitizeFn</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">DOMPurify</span><span class="p">.</span><span class="nx">sanitize</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+                </div>
+            </main>
+        </div>
+
+
+        <footer class="bd-footer py-5 mt-5 bg-light">
+
+        </footer>
+
+        <script src="../assets/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+        <script src="../assets/js/docs.min.js"></script>
+
+
+
+
+    </body>
+</html>
